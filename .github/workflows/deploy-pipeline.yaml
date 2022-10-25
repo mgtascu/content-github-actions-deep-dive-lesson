@@ -58,3 +58,16 @@ jobs:
           body: New release for ${{ github.sha }}. Release notes on...
           draft: false
           prerelease: false
+      - name: get artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: zipped-bundle
+      - name: upload art
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.github_token }}
+        with:
+          upload_url: ${{ steps.create-release.outputs.upload_url }}
+          asset_path: ./${{ github.sha }}.zip
+          asset_name: code_with_libs.zip
+          asset_content_type: application/zip
