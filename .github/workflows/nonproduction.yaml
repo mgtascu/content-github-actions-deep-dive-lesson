@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          repository: https://github.com/linuxacademy/content-github-actions-deep-dive-lab.git
+          repository: linuxacademy/content-github-actions-deep-dive-lab.git
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
