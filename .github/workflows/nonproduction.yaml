@@ -18,6 +18,8 @@ jobs:
           aws-region: us-east-1
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          repository: https://github.com/linuxacademy/content-github-actions-deep-dive-lab.git
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
